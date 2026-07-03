@@ -88,11 +88,11 @@ export function FieldControl({
             <span
               className="grid h-5 w-5 place-items-center rounded-full border-2"
               style={{
-                borderColor: on ? "var(--color-sun)" : "var(--color-line)",
-                background: on ? "var(--color-sun)" : "transparent",
+                borderColor: on ? "var(--color-teal)" : "var(--color-line)",
+                background: on ? "var(--color-teal)" : "transparent",
               }}
             >
-              {on ? <Check size={13} strokeWidth={3.5} color="#4a2f05" /> : null}
+              {on ? <Check size={13} strokeWidth={3.5} color="#fff" /> : null}
             </span>
             <span className="leading-tight text-left">
               {opt.label}

@@ -1,12 +1,11 @@
 import { useMemo, useState } from "react";
 import {
   Sparkles,
-  Target,
   ShieldAlert,
   TrendingUp,
   ChevronDown,
   ChevronUp,
-  Sun,
+  HeartHandshake,
   Shield,
   Printer,
   RotateCcw,
@@ -76,9 +75,9 @@ function AppHeader() {
       <div className="mx-auto flex max-w-4xl items-center gap-3 px-4 py-4 sm:px-6">
         <div
           className="grid h-11 w-11 shrink-0 place-items-center rounded-xl print:hidden"
-          style={{ background: "var(--color-sun-soft)" }}
+          style={{ background: "var(--color-teal-soft)" }}
         >
-          <Sun size={22} color="var(--color-marigold)" strokeWidth={2.2} />
+          <HeartHandshake size={22} color="var(--color-teal)" strokeWidth={2.2} />
         </div>
         <div className="min-w-0">
           <p className="display text-lg font-extrabold leading-tight text-ink sm:text-xl">
@@ -88,12 +87,6 @@ function AppHeader() {
             Care Plan Builder · de-identified · no PHI stored
           </p>
         </div>
-        <span
-          className="pill ml-auto hidden shrink-0 sm:inline-flex"
-          style={{ background: "var(--color-plum-soft)", color: "#5c3560" }}
-        >
-          <Target size={14} /> Option C
-        </span>
       </div>
     </header>
   );
@@ -157,7 +150,7 @@ export function CarePlanBuilder() {
       <div className="mx-auto max-w-4xl px-4 pt-5 sm:px-6 sm:pt-8">
         <div className="mb-5 print:hidden">
           <h1 className="display text-2xl font-extrabold text-ink sm:text-3xl">
-            Build a plan of attack
+            Build a care plan
           </h1>
           <p className="mt-1 text-ink-soft">
             Fill out the de-identified profile, then get a scored, sequenced list of county
@@ -172,9 +165,9 @@ export function CarePlanBuilder() {
               type="button"
               className="btn text-sm"
               style={{
-                background: tab === "profile" ? "var(--color-plum)" : "transparent",
+                background: tab === "profile" ? "var(--color-teal)" : "transparent",
                 color: tab === "profile" ? "#fff" : "var(--color-ink)",
-                border: "2px solid var(--color-line)",
+                border: `2px solid ${tab === "profile" ? "var(--color-teal)" : "var(--color-line)"}`,
                 minHeight: 44,
               }}
               onClick={() => setTab("profile")}
@@ -188,9 +181,9 @@ export function CarePlanBuilder() {
               type="button"
               className="btn text-sm"
               style={{
-                background: tab === "plan" ? "var(--color-plum)" : "transparent",
+                background: tab === "plan" ? "var(--color-teal)" : "transparent",
                 color: tab === "plan" ? "#fff" : "var(--color-ink)",
-                border: "2px solid var(--color-line)",
+                border: `2px solid ${tab === "plan" ? "var(--color-teal)" : "var(--color-line)"}`,
                 minHeight: 44,
               }}
               onClick={() => setTab("plan")}
@@ -260,7 +253,7 @@ export function CarePlanBuilder() {
               <div className="h-2.5 overflow-hidden rounded-full bg-sand">
                 <div
                   className="h-full rounded-full transition-all duration-300"
-                  style={{ width: `${progress}%`, background: "var(--color-plum)" }}
+                  style={{ width: `${progress}%`, background: "var(--color-teal)" }}
                 />
               </div>
             </div>

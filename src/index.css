@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 /*
- * San Diego Recovery — warm, sunny design system.
- * Soft rounded edges, inviting colors, high-legibility rounded type.
+ * San Diego Recovery — calm, trustworthy design system.
+ * A warm cream base keeps it human; a single teal accent carries every
+ * interactive element. Warm hues (sun / coral / leaf) are reserved for
+ * meaning only: severity, phases, and warnings.
  */
 @theme {
   --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
@@ -11,25 +13,29 @@
   --radius-xl: 1.25rem;
   --radius-2xl: 1.75rem;
 
-  --color-cream: #fff7ec;
-  --color-sand: #fdeeda;
-  --color-paper: #fffdf9;
-  --color-ink: #3f322c;
-  --color-ink-soft: #8a7669;
-  --color-line: #f1e2ce;
+  --color-cream: #fbf7f1;
+  --color-sand: #f1eadf;
+  --color-paper: #ffffff;
+  --color-ink: #2b2a28;
+  --color-ink-soft: #77726b;
+  --color-line: #ece3d6;
 
-  --color-sun: #f6a623;
-  --color-sun-soft: #fdeccb;
-  --color-marigold: #f39200;
-  --color-coral: #ef7059;
-  --color-coral-soft: #fbe1d9;
-  --color-teal: #2ea79b;
-  --color-teal-soft: #d7f1ec;
-  --color-sky: #5bb8dd;
-  --color-sky-soft: #daf0f8;
-  --color-leaf: #78be6a;
-  --color-leaf-soft: #e2f2dc;
-  --color-plum: #a06aa8;
+  /* Primary accent — teal carries all interactive UI */
+  --color-teal: #0f8a7c;
+  --color-teal-soft: #d6efea;
+  --color-teal-strong: #0b6f63;
+
+  /* Semantic warm tones — severity, phases, warnings only */
+  --color-sun: #e79424;
+  --color-sun-soft: #fbecd0;
+  --color-marigold: #d98213;
+  --color-coral: #e26852;
+  --color-coral-soft: #f9e0d9;
+  --color-sky: #4fa9d6;
+  --color-sky-soft: #ddeff8;
+  --color-leaf: #5faf57;
+  --color-leaf-soft: #e0f0da;
+  --color-plum: #8f6497;
   --color-plum-soft: #efe1f1;
 }
 
@@ -40,8 +46,7 @@
   body {
     margin: 0;
     background:
-      radial-gradient(1200px 600px at 100% -10%, var(--color-sun-soft), transparent 60%),
-      radial-gradient(1000px 500px at -10% 0%, var(--color-coral-soft), transparent 55%),
+      radial-gradient(1100px 640px at 50% -22%, var(--color-teal-soft), transparent 68%),
       var(--color-cream);
     background-attachment: fixed;
     color: var(--color-ink);
@@ -94,12 +99,12 @@
     transform: translateY(1px);
   }
   .btn-primary {
-    background: var(--color-sun);
-    color: #4a2f05;
-    box-shadow: 0 8px 20px -8px rgba(243, 146, 0, 0.7);
+    background: var(--color-teal);
+    color: #fff;
+    box-shadow: 0 8px 20px -8px rgba(15, 138, 124, 0.65);
   }
   .btn-primary:hover {
-    background: var(--color-marigold);
+    background: var(--color-teal-strong);
   }
   .btn-coral {
     background: var(--color-coral);
@@ -135,12 +140,12 @@
     user-select: none;
   }
   .chip:hover {
-    border-color: var(--color-sun);
+    border-color: var(--color-teal);
   }
   .chip[data-on="true"] {
-    background: var(--color-sun-soft);
-    border-color: var(--color-sun);
-    color: #5a3c05;
+    background: var(--color-teal-soft);
+    border-color: var(--color-teal);
+    color: var(--color-teal-strong);
   }
 
   .pill {
@@ -165,8 +170,8 @@
   }
   .field-input:focus {
     outline: none;
-    border-color: var(--color-sun);
-    box-shadow: 0 0 0 4px var(--color-sun-soft);
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 4px var(--color-teal-soft);
   }
 }
 

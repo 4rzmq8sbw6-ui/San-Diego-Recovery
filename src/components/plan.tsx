@@ -91,7 +91,7 @@ export function ResourceCard({
         {rank ? (
           <span
             className="display grid h-9 w-9 shrink-0 place-items-center rounded-full text-lg font-extrabold"
-            style={{ background: "var(--color-sun)", color: "#4a2f05" }}
+            style={{ background: "var(--color-teal)", color: "#fff" }}
           >
             {rank}
           </span>
@@ -128,7 +128,7 @@ export function ResourceCard({
         <ul className="mt-3 space-y-1 text-sm text-ink-soft">
           {r.services.slice(0, compact ? 2 : 4).map((s) => (
             <li key={s} className="flex gap-2">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sun" />
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
               <span>{s}</span>
             </li>
           ))}
