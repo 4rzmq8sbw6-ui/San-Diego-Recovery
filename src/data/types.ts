@@ -1,5 +1,5 @@
 /**
- * Shared domain types for the recovery navigator.
+ * Shared domain types for San Diego Recovery.
  *
  * Two halves:
  *  1. The RESOURCE database (organizations, services, eligibility gates).

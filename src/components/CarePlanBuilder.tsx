@@ -82,7 +82,7 @@ function AppHeader() {
         </div>
         <div className="min-w-0">
           <p className="display text-lg font-extrabold leading-tight text-ink sm:text-xl">
-            San Diego Recovery Navigator
+            San Diego Recovery
           </p>
           <p className="text-xs font-semibold text-ink-soft sm:text-sm">
             Care Plan Builder · de-identified · no PHI stored

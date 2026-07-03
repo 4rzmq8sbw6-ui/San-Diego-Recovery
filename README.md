@@ -1,11 +1,11 @@
-# San Diego Recovery Navigator
+# San Diego Recovery
 
 **Care Plan Builder** — match de-identified intake profiles to San Diego County emergency & recovery resources, then output a scored, sequenced plan of attack.
 
 ## Run locally
 
 ```bash
-cd sd-recovery-navigator
+cd ~/"kevs project"
 npm install
 npm run dev
 ```

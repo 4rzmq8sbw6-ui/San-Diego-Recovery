@@ -10,7 +10,7 @@ Best for handing a link to your director fast.
 
 1. Build it:
    ```bash
-   cd sd-recovery-navigator
+   cd ~/"kevs project"
    npm install
    npm run build
    ```
@@ -26,7 +26,7 @@ Best for handing a link to your director fast.
 
 ```bash
 npm install -g vercel      # once
-cd sd-recovery-navigator
+cd ~/"kevs project"
 vercel                     # follow prompts; accept defaults
 vercel --prod              # promote to a production URL
 ```
@@ -39,7 +39,7 @@ vercel --prod              # promote to a production URL
 
 ```bash
 npm install -g netlify-cli   # once
-cd sd-recovery-navigator
+cd ~/"kevs project"
 netlify deploy --build       # draft URL
 netlify deploy --build --prod  # production URL
 ```

@@ -1,9 +1,9 @@
 {
-  "name": "sd-recovery-navigator",
+  "name": "sd-recovery",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "San Diego County recovery resource navigator — de-identified intake template + resource matcher. Three prototype experiences.",
+  "description": "San Diego County recovery care plan builder — de-identified intake template + resource matcher.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
