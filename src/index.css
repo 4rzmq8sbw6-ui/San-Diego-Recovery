@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+/*
+ * San Diego Recovery Navigator — warm, sunny design system.
+ * Soft rounded edges, inviting colors, high-legibility rounded type.
+ */
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Baloo 2", "Nunito", sans-serif;
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+
+  --color-cream: #fff7ec;
+  --color-sand: #fdeeda;
+  --color-paper: #fffdf9;
+  --color-ink: #3f322c;
+  --color-ink-soft: #8a7669;
+  --color-line: #f1e2ce;
+
+  --color-sun: #f6a623;
+  --color-sun-soft: #fdeccb;
+  --color-marigold: #f39200;
+  --color-coral: #ef7059;
+  --color-coral-soft: #fbe1d9;
+  --color-teal: #2ea79b;
+  --color-teal-soft: #d7f1ec;
+  --color-sky: #5bb8dd;
+  --color-sky-soft: #daf0f8;
+  --color-leaf: #78be6a;
+  --color-leaf-soft: #e2f2dc;
+  --color-plum: #a06aa8;
+  --color-plum-soft: #efe1f1;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 600px at 100% -10%, var(--color-sun-soft), transparent 60%),
+      radial-gradient(1000px 500px at -10% 0%, var(--color-coral-soft), transparent 55%),
+      var(--color-cream);
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  /* Soft, inviting card */
+  .card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-2xl);
+    box-shadow:
+      0 1px 2px rgba(63, 50, 44, 0.04),
+      0 12px 30px -18px rgba(63, 50, 44, 0.25);
+  }
+
+  /* Clearly delineated primary button */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.85rem 1.4rem;
+    line-height: 1;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition:
+      transform 0.12s ease,
+      box-shadow 0.12s ease,
+      background 0.12s ease;
+    min-height: 48px;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--color-sun);
+    color: #4a2f05;
+    box-shadow: 0 8px 20px -8px rgba(243, 146, 0, 0.7);
+  }
+  .btn-primary:hover {
+    background: var(--color-marigold);
+  }
+  .btn-coral {
+    background: var(--color-coral);
+    color: #fff;
+    box-shadow: 0 8px 20px -8px rgba(239, 112, 89, 0.75);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-line);
+  }
+  .btn-ghost:hover {
+    background: var(--color-sand);
+  }
+
+  /* Checkbox / chip toggle — big tap targets for phone + tablet */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    border: 2px solid var(--color-line);
+    background: var(--color-paper);
+    padding: 0.7rem 1.05rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    cursor: pointer;
+    transition:
+      background 0.12s ease,
+      border-color 0.12s ease,
+      transform 0.1s ease;
+    min-height: 46px;
+    user-select: none;
+  }
+  .chip:hover {
+    border-color: var(--color-sun);
+  }
+  .chip[data-on="true"] {
+    background: var(--color-sun-soft);
+    border-color: var(--color-sun);
+    color: #5a3c05;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    padding: 0.28rem 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .field-input {
+    width: 100%;
+    border-radius: 1rem;
+    border: 2px solid var(--color-line);
+    background: var(--color-paper);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: var(--color-ink);
+    min-height: 48px;
+  }
+  .field-input:focus {
+    outline: none;
+    border-color: var(--color-sun);
+    box-shadow: 0 0 0 4px var(--color-sun-soft);
+  }
+}
+
+/* Print — care plan export */
+@media print {
+  body {
+    background: white !important;
+    font-size: 11pt;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+  .card {
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  #care-plan-output {
+    max-width: 100%;
+  }
+  a[href^="tel:"]::after,
+  a[href^="mailto:"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+}
