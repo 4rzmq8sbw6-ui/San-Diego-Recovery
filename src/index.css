@@ -45,12 +45,9 @@
   }
   body {
     margin: 0;
-    background:
-      radial-gradient(1100px 640px at 50% -22%, var(--color-teal-soft), transparent 68%),
-      var(--color-cream);
-    background-attachment: fixed;
-    color: var(--color-ink);
-    font-family: var(--font-sans);
+    background: oklch(17% 0.025 215);
+    color: oklch(95% 0.015 85);
+    font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
     line-height: 1.5;

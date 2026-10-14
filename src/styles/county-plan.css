@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700&display=swap");
+
+/* Scoped so Navigator keeps its own type and color. */
+.county-plan {
+  --cp-bg: oklch(17% 0.025 215);
+  --cp-fg: oklch(95% 0.015 85);
+  --cp-card: oklch(21% 0.03 212);
+  --cp-primary: oklch(78% 0.15 65);
+  --cp-primary-fg: oklch(18% 0.03 215);
+  --cp-secondary: oklch(27% 0.04 208);
+  --cp-secondary-fg: oklch(92% 0.02 85);
+  --cp-muted: oklch(24% 0.03 210);
+  --cp-muted-fg: oklch(70% 0.03 200);
+  --cp-accent: oklch(32% 0.06 195);
+  --cp-teal: oklch(74% 0.11 190);
+  --cp-crisis: oklch(68% 0.19 25);
+  --cp-border: oklch(95% 0.015 85 / 0.1);
+  --cp-input: oklch(95% 0.015 85 / 0.14);
+  --cp-gradient-amber: linear-gradient(135deg, oklch(82% 0.15 75), oklch(70% 0.16 50));
+  --cp-shadow-elegant: 0 30px 60px -30px oklch(0% 0 0 / 0.6), 0 0 0 1px oklch(95% 0.015 85 / 0.06);
+  --cp-shadow-glow: 0 10px 40px -10px oklch(78% 0.15 65 / 0.5);
+
+  min-height: 100vh;
+  background: var(--cp-bg);
+  color: var(--cp-fg);
+  font-family: Manrope, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.county-plan h1,
+.county-plan h2,
+.county-plan h3 {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.county-plan .cp-map {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #12343a;
+}
+
+.county-plan .cp-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  opacity: 0.5;
+  filter: none;
+  transition:
+    opacity 0.45s ease,
+    filter 0.45s ease;
+}
+
+.county-plan .cp-map-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 45% at 72% 0%, oklch(78% 0.15 65 / 0.16), transparent 70%),
+    linear-gradient(
+      to bottom,
+      oklch(17% 0.025 215 / 0.28),
+      oklch(17% 0.025 215 / 0.72) 48%,
+      var(--cp-bg) 78%
+    );
+  transition: background 0.45s ease;
+}
+
+.county-plan .cp-map-dim img {
+  opacity: 0.14;
+}
+
+.county-plan .cp-map-dim .cp-map-scrim {
+  background:
+    radial-gradient(55% 32% at 78% 0%, oklch(78% 0.15 65 / 0.14), transparent 72%),
+    linear-gradient(to bottom, oklch(15% 0.025 215 / 0.9), oklch(13% 0.02 215 / 0.96));
+}
+
+.county-plan .cp-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.county-plan .cp-glass {
+  background: color-mix(in oklab, var(--cp-card) 88%, transparent);
+  border: 1px solid var(--cp-border);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--cp-shadow-elegant);
+}
+
+.county-plan .cp-amber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--cp-gradient-amber);
+  color: var(--cp-primary-fg);
+  box-shadow: var(--cp-shadow-glow);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.county-plan .cp-amber:hover {
+  transform: scale(1.03);
+}
+
+.county-plan .cp-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--cp-border);
+  background: color-mix(in oklab, var(--cp-card) 75%, transparent);
+  color: var(--cp-fg);
+  backdrop-filter: blur(14px);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.county-plan .cp-gradient-text {
+  background-image: linear-gradient(105deg, oklch(92% 0.14 82), oklch(78% 0.17 58));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+.county-plan .cp-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--cp-teal);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.county-plan .cp-kicker-note {
+  color: var(--cp-muted-fg);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.county-plan .cp-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--cp-border);
+  background: color-mix(in oklab, var(--cp-card) 60%, transparent);
+  color: var(--cp-muted-fg);
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.county-plan .cp-choice:hover {
+  border-color: color-mix(in oklab, var(--cp-primary) 40%, transparent);
+  color: var(--cp-fg);
+}
+
+.county-plan .cp-choice[data-on="true"] {
+  border-color: var(--cp-primary);
+  background: color-mix(in oklab, var(--cp-primary) 10%, transparent);
+  color: var(--cp-fg);
+  box-shadow: var(--cp-shadow-glow);
+}
+
+.county-plan .cp-mark {
+  display: grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 0.375rem;
+  border: 1px solid var(--cp-input);
+}
+
+.county-plan .cp-mark-round {
+  border-radius: 999px;
+}
+
+.county-plan .cp-choice[data-on="true"] .cp-mark {
+  border-color: var(--cp-primary);
+  background: var(--cp-primary);
+  color: var(--cp-primary-fg);
+}
+
+.county-plan .cp-choice-hint {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--cp-muted-fg);
+  font-size: 0.75rem;
+}
+
+.county-plan .cp-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid color-mix(in oklab, var(--cp-border) 60%, transparent);
+  background: color-mix(in oklab, var(--cp-bg) 82%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.county-plan .cp-step-in {
+  animation: cp-step-in 0.45s ease;
+}
+
+@keyframes cp-step-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.county-plan .cp-logo-mark {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 0.5rem;
+  background: var(--cp-gradient-amber);
+  color: var(--cp-primary-fg);
+  box-shadow: var(--cp-shadow-glow);
+}
+
+.county-plan .cp-search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--cp-border);
+  background: color-mix(in oklab, var(--cp-card) 75%, transparent);
+  padding: 0.75rem 1.25rem;
+  backdrop-filter: blur(14px);
+}
+
+.county-plan .cp-search input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--cp-fg);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.county-plan .cp-search input::placeholder {
+  color: var(--cp-muted-fg);
+}
+
+.county-plan .cp-filter {
+  border-radius: 999px;
+  border: 1px solid var(--cp-border);
+  background: transparent;
+  color: var(--cp-muted-fg);
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.county-plan .cp-filter[data-on="true"] {
+  border-color: var(--cp-primary);
+  background: color-mix(in oklab, var(--cp-primary) 15%, transparent);
+  color: var(--cp-fg);
+}
+
+.county-plan .cp-need {
+  border-radius: 999px;
+  border: 1px solid var(--cp-border);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--cp-muted-fg);
+}
+
+.county-plan .cp-need[data-level="3"] {
+  border-color: color-mix(in oklab, var(--cp-crisis) 50%, transparent);
+  background: color-mix(in oklab, var(--cp-crisis) 15%, transparent);
+  color: var(--cp-fg);
+}
+
+.county-plan .cp-need[data-level="2"] {
+  border-color: color-mix(in oklab, var(--cp-primary) 40%, transparent);
+  background: color-mix(in oklab, var(--cp-primary) 10%, transparent);
+  color: var(--cp-fg);
+}
+
+.county-plan .cp-phase-num {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--cp-secondary);
+  color: var(--cp-secondary-fg);
+  font-family: Fraunces, Georgia, serif;
+  font-size: 0.875rem;
+}
+
+.county-plan .cp-phase-num[data-first="true"] {
+  background: var(--cp-gradient-amber);
+  color: var(--cp-primary-fg);
+  box-shadow: var(--cp-shadow-glow);
+}
+
+@media print {
+  .county-plan {
+    background: white !important;
+    color: black !important;
+  }
+  .county-plan .cp-map {
+    display: none !important;
+  }
+  .county-plan .no-print {
+    display: none !important;
+  }
+  .county-plan .cp-glass {
+    background: white;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}

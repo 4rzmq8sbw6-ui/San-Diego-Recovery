@@ -1,6 +1,8 @@
-# San Diego Recovery
+# Wayfinder SD
 
-**Care Plan Builder** — match de-identified intake profiles to San Diego County emergency & recovery resources, then output a scored, sequenced plan of attack.
+A de-identified care-plan wizard for San Diego County. Check a profile with no names or identifiers, and Wayfinder orders the county resources to call, with phones, hours, and intake links.
+
+Live: https://san-diego-recovery.pages.dev
 
 ## Run locally
 
@@ -10,35 +12,13 @@ npm install
 npm run dev
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173`).
+## What is in here
 
-## How it works
-
-1. **Profile** — Fill out the de-identified template (age, substances, MH/medical, housing, food, transport, income, documents, etc.). No names or PHI.
-2. **Care plan** — The engine derives needs with severity, filters eligibility gates, scores fit, and sequences resources into **Stabilize → Connect → Sustain** phases with phones, hours, and intake links.
-3. **Print** — Export the plan from the care plan tab.
-
-Use **Sample** to load a worked example profile instantly.
-
-## Data
-
-| File | Purpose |
+| Path | Purpose |
 |------|---------|
-| `src/data/resources.ts` | 17 starter county orgs (verify before real-world use) |
-| `src/data/intake.ts` | Schema-driven de-identified intake template |
-| `src/lib/matcher.ts` | Need derivation → eligibility → scoring → phasing |
+| `src/components/county-resource-plan/` | Wayfinder screens |
+| `src/lib/county-resource-plan/` | The 25-program directory and the matcher |
+| `src/styles/county-plan.css` | Wayfinder look |
+| `scripts/county-plan-selfcheck.ts` | Checks the sample plan order |
 
-## Design
-
-Warm coastal palette, Nunito + Baloo 2, soft rounded cards, 48px+ tap targets for phone/tablet.
-
-## Roadmap
-
-- Expand resource database (211 export, county provider directory)
-- Admin CRUD for resources
-- PDF export with branding
-- Optional encrypted storage for saved de-identified profiles
-
-## Archived prototypes
-
-Earlier explorations (Guided Journey, Command Center) remain in `src/prototypes/` for reference.
+Earlier cream-palette prototypes remain in `src/components/CarePlanBuilder.tsx` and `src/prototypes/`. The app entry now renders Wayfinder.

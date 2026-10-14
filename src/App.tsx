@@ -1,5 +1,5 @@
-import { CarePlanBuilder } from "@/components/CarePlanBuilder";
+import { CountyResourceWizard } from "@/components/county-resource-plan/CountyResourceWizard";
 
 export function App() {
-  return <CarePlanBuilder />;
+  return <CountyResourceWizard />;
 }

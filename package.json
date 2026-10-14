@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "San Diego County recovery care plan builder — de-identified intake template + resource matcher.",
+  "description": "Wayfinder SD — de-identified San Diego County care plans for frequent 911 callers.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
